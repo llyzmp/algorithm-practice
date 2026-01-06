@@ -33,7 +33,8 @@ NumArray.prototype.sumRange = function(left, right) {
  */
 // @lc code=end
 
-
+const numArray = new NumArray([-2, 0, 3, -5, 2, -1])
+console.log('111',numArray.sumRange(2,5))
 
 /*
 // @lcpr case=start
