@@ -11,16 +11,17 @@
  * @return {number}
  */
 var maxArea = function(height) {
-  let max = 0, left = 0, right = height.length - 1
+  let left = 0, right = height.length - 1
+  let max = 0
   while(left < right) {
-    const h = Math.min(height[left], height[right])
-    const w = right - left
-    max = Math.max(h * w, max)
-    // 移动短指针
-    if(height[left] < height[right]) {
-      left++
-    } else {
+    const area = (right - left) * Math.min(height[left], height[right])
+    if(max < area) {
+      max = area
+    }
+    if(height[left] > height[right]) {
       right--
+    }else {
+      left++
     }
   }
   return max
